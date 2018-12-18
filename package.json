@@ -1,0 +1,11 @@
+{
+  "name": "node_weworkapi",
+  "version": "1.0.0",
+  "description": "The Nodejs WeWork API",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC"
+}
