@@ -5,11 +5,6 @@
  * @version 1.0
  */
 const aesjs = require('aes-js');
-const {
-    decode: PKCS7_decode,
-    encode: PKCS7_encode
-} = require("./PKCS7Encoder");
-
 /**
  * 明文加密
  * @param {Array} aesKey 
