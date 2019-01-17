@@ -49,7 +49,7 @@ describe("WXBizMsgCrypt TestSuite", () => {
         });
     });
     describe("encryptMessage TestCase", () => {
-        it("Test encryptMessage", async () => {
+        it("Test encryptMessage", () => {
             let corpId = "ww1436e0e65a779aee";
             let token = "hJqcu3uJ9Tn2gXPmxx2w9kkCkCE2EPYo";
             let encodingAesKey = "6qkdMrq68nTKduznJYO1A37W2oEgpkMUvkttRToqhUt";
@@ -58,8 +58,9 @@ describe("WXBizMsgCrypt TestSuite", () => {
             let nonce = "1597212914";
             let replyMsg =
                 "<xml><ToUserName>ww1436e0e65a779aee</ToUserName><FromUserName>ChenJiaShun</FromUserName><CreateTime>1476422779</CreateTime><MsgType>text</MsgType><Content>你好</Content><MsgId>1456453720</MsgId><AgentID>1000002</AgentID></xml>";
+            debugger;
             let wxBizMsgCrypt = WXBizMsgCrypt(token, encodingAesKey, corpId);
-            let message = await wxBizMsgCrypt.encryptMessage(
+            let message = wxBizMsgCrypt.encryptMessage(
                 replyMsg,
                 timestamp,
                 nonce

@@ -41,15 +41,15 @@ function decrypt(aesKey, text, receiveId) {
     // 还原消息长度值
     let msgLen = NetworkByteOrder.ntohl([...plainText.slice(16, 20)]);
     // 取得XML内容
-    let xmlContent = Buffer.from(plainText.slice(20, 20 + msgLen)).toString(
-        "utf8"
-    );
+    let xmlContent = Buffer.from([
+        ...plainText.slice(20, 20 + msgLen)
+    ]).toString("utf8");
     // 取得receiveID内容
-    let fromReceiveId = Buffer.from(plainText.slice(20 + msgLen)).toString(
+    let fromReceiveId = Buffer.from([...plainText.slice(20 + msgLen)]).toString(
         "utf8"
     );
     if (fromReceiveId !== receiveId) {
-        throw WXBizMsgCryptError.ValidateCorpid_Error;
+        throw WXBizMsgCryptError.ValidateCorpid_Error();
     }
     return xmlContent;
 }

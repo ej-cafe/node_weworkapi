@@ -22,7 +22,7 @@ function ntohl(x) {
  * @param {int} x 需要转换成NBO的整数
  */
 function htonl(x) {
-    let orderBytes = new ArrayBuffer(4);
+    let orderBytes = new Uint8Array(4);
     orderBytes[3] = x & 0xff;
     orderBytes[2] = (x >> 8) & 0xff;
     orderBytes[1] = (x >> 16) & 0xff;
