@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`WXBizMsgCrypt TestSuite decryptMessage TestCase Test decryptMessage 1`] = `
+"<xml><ToUserName><![CDATA[wx5823bf96d3bd56c7]]></ToUserName>
+<FromUserName><![CDATA[mycreate]]></FromUserName>
+<CreateTime>1409659813</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[hello]]></Content>
+<MsgId>4561255354251345929</MsgId>
+<AgentID>218</AgentID>
+</xml>"
+`;
+
+exports[`WXBizMsgCrypt TestSuite encryptMessage TestCase Test encryptMessage 1`] = `
+"<xml>
+<Encrypt><![CDATA[RS76Qh1DmrbNRFfnby47FdyStlVxXaGGc7vQscUqWnEo2oN65g8FJaQsNqEsmyC0gd2+m56P0XeYZTqWLSuVKihnJ4kbaxOkV5XYbCAGx//HvRR5k0J4SPHHiKBn3y2OuEjQOXKbuu+a8I/P/2Pm8rMJoPSyZMotXcox3GFUtyW+ZOVwU/v2MEAeu3iWFm4Gd4CacPVRa21E2G18jnMJnMroiXrZcF1rgsXjiHnb+umIti7TTtRn4/S61g9SbhWMyruDaW/hhfdDAT2PXgcE7J+cZ/x4fw0GHfpTCfygYF/92JVxLULGUIcEa349UD+req+6k7sE9rimfOAeLQglRlj6smUs6ADRX/b/9VNG9tFcMIIb7uw2cMyDGs4hQD+J]]></Encrypt>
+<MsgSignature><![CDATA[daadc8ba55ba31446ab8d9a4f6f0f8b491f92249]]></MsgSignature>
+<TimeStamp>1476422779</TimeStamp>
+<Nonce><![CDATA[1597212914]]></Nonce>
+</xml>"
+`;
+
+exports[`WXBizMsgCrypt TestSuite verifyUrl TestCase Test WXBizMsgCrypt 1`] = `
+"<xml><ToUserName><![CDATA[wx5823bf96d3bd56c7]]></ToUserName>
+<FromUserName><![CDATA[mycreate]]></FromUserName>
+<CreateTime>1409659813</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[hello]]></Content>
+<MsgId>4561255354251345929</MsgId>
+<AgentID>218</AgentID>
+</xml>"
+`;
