@@ -18,16 +18,16 @@ const Errors = {
 module.exports.Errors = Errors;
 
 module.exports.ErrorDescriptions = {
-    [Errors.OK]: '成功',
-    [Errors.ValidateSignature_Error]: '签名校验错误',
-    [Errors.ParseXml_Error]: 'XML解析错误',
-    [Errors.ComputeSignature_Error]: '计算签名错误',
-    [Errors.IllegalAesKey]: '非法AES秘钥',
-    [Errors.ValidateCorpid_Error]: 'Corpid校验错误',
-    [Errors.EncryptAES_Error]: 'AES加密错误',
-    [Errors.DecryptAES_Error]: 'AES解密错误',
-    [Errors.IllegalBuffer]: '非法缓冲区',
-    [Errors.EncodeBase64_Error]: 'Base64加密错误',
-    [Errors.DecodeBase64_Error]: 'Base64解密错误',
-    [Errors.GenReturnXml_Error]: '生成XML错误'
-}
+    [Errors.OK]: "成功",
+    [Errors.ValidateSignature_Error]: "签名校验错误",
+    [Errors.ParseXml_Error]: "XML解析错误",
+    [Errors.ComputeSignature_Error]: "计算签名错误",
+    [Errors.IllegalAesKey]: "非法AES秘钥",
+    [Errors.ValidateCorpid_Error]: "Corpid校验错误",
+    [Errors.EncryptAES_Error]: "AES加密错误",
+    [Errors.DecryptAES_Error]: "AES解密错误",
+    [Errors.IllegalBuffer]: "非法缓冲区",
+    [Errors.EncodeBase64_Error]: "Base64加密错误",
+    [Errors.DecodeBase64_Error]: "Base64解密错误",
+    [Errors.GenReturnXml_Error]: "生成XML错误"
+};

@@ -4,10 +4,10 @@
  * @author Evan<redwolf0302@gmail.com>
  * @version 1.0
  */
-const aesjs = require('aes-js');
+const aesjs = require("aes-js");
 /**
  * 明文加密
- * @param {Array} aesKey 
+ * @param {Array} aesKey
  * @param {string|Array} text
  * @returns {Array} 密文字节数组
  */
@@ -22,7 +22,7 @@ function encrypt(aesKey, text) {
 /**
  * 密文解密
  * @param {Array} aesKey AES秘钥字节数组
- * @param {string|Array} text 
+ * @param {string|Array} text
  * @returns {Array} 明文字节数组
  */
 function decrypt(aesKey, text) {
@@ -36,4 +36,4 @@ function decrypt(aesKey, text) {
 module.exports = {
     encrypt,
     decrypt
-}
+};

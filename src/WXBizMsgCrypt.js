@@ -6,12 +6,10 @@
  */
 const Buffer = require("buffer").Buffer;
 const jsSHA = require("jssha");
-const base64 = require('base64-js');
+const base64 = require("base64-js");
 const xmldoc = require("xmldoc");
 const WXBizMsgCryptError = require("./WXBizMsgCryptError");
-const {
-    getRandomText
-} = require('./RandomGenerator');
+const { getRandomText } = require("./RandomGenerator");
 const PKCS7Encoder = require("./PKCS7Encoder");
 const AesUtils = require("./AesUtils");
 const NetworkByteOrder = require("./NetworkByteOrder");
@@ -31,19 +29,25 @@ function sha1(token, timestamp, nonce, encrypt) {
 
 /**
  * 消息密文解密函数
- * @param {*} aesKey 
- * @param {*} text 
- * @param {*} receiveId 
+ * @param {*} aesKey
+ * @param {*} text
+ * @param {*} receiveId
  */
 function decrypt(aesKey, text, receiveId) {
     // 解密密文和去除PKCS7的padding字节
-    let plainText = PKCS7Encoder.decode(AesUtils.decrypt(aesKey, [...Buffer.from(text, "base64")]));
+    let plainText = PKCS7Encoder.decode(
+        AesUtils.decrypt(aesKey, [...Buffer.from(text, "base64")])
+    );
     // 还原消息长度值
     let msgLen = NetworkByteOrder.ntohl([...plainText.slice(16, 20)]);
     // 取得XML内容
-    let xmlContent = Buffer.from(plainText.slice(20, 20 + msgLen)).toString("utf8");
+    let xmlContent = Buffer.from(plainText.slice(20, 20 + msgLen)).toString(
+        "utf8"
+    );
     // 取得receiveID内容
-    let fromReceiveId = Buffer.from(plainText.slice(20 + msgLen)).toString("utf8");
+    let fromReceiveId = Buffer.from(plainText.slice(20 + msgLen)).toString(
+        "utf8"
+    );
     if (fromReceiveId !== receiveId) {
         throw WXBizMsgCryptError.ValidateCorpid_Error;
     }
@@ -52,18 +56,26 @@ function decrypt(aesKey, text, receiveId) {
 
 /**
  * 消息明文加密函数
- * @param {*} aesKey 
- * @param {*} random 
- * @param {*} text 
- * @param {*} receiveId 
+ * @param {*} aesKey
+ * @param {*} random
+ * @param {*} text
+ * @param {*} receiveId
  */
 function encrypt(aesKey, random, text, receiveId) {
     let randomBytes = Buffer.from(random);
     let NBO = Buffer.from(NetworkByteOrder.htonl(text.length));
     let textBytes = Buffer.from(text);
     let receiveIdBytes = Buffer.from(receiveId);
-    let plainText = Buffer.concat([randomBytes, NBO, textBytes, receiveIdBytes])
-    plainText = Buffer.concat([plainText, PKCS7Encoder.encode(plainText.byteLength)]);
+    let plainText = Buffer.concat([
+        randomBytes,
+        NBO,
+        textBytes,
+        receiveIdBytes
+    ]);
+    plainText = Buffer.concat([
+        plainText,
+        PKCS7Encoder.encode(plainText.byteLength)
+    ]);
     return base64.fromByteArray(AesUtils.encrypt(aesKey, plainText));
 }
 
@@ -142,7 +154,7 @@ function WXBizMsgCrypt(token, encodingAesKey, receiveId) {
         verifyUrl,
         decryptMessage,
         encryptMessage
-    }
+    };
 }
 
 module.exports = WXBizMsgCrypt;
