@@ -4,22 +4,22 @@
 
 ## 使用方式
 
-npm 安装 weworkapi
+npm 安装 node_weworkapi
 
 ```shell
-npm install weworkapi
+npm install node_weworkapi
 ```
 
-yarn 安装 weworkapi
+yarn 安装 node_weworkapi
 
 ```shell
-yarn add weworkapi
+yarn add node_weworkapi
 ```
 
 调用 verifyUrl 函数
 
 ```javascript
-const WXBizMsgCrypt = require("weworkapi");
+const WXBizMsgCrypt = require("node_weworkapi");
 
 //您的企业ID
 const corpId = "wx5823bf96d3bd56c7";
