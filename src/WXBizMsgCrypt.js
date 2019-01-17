@@ -81,15 +81,10 @@ function encrypt(aesKey, random, text, receiveId) {
 
 /**
  * 企业微信消息加解密处理库
- ```javascript
- const wxBizMsgCrypt = WXBizMsgCrypt('your token', 'your encodingAesKey', 'your corpId');
- wxBizMsgCrypt.verifyUrl()
- wxBizMsgCrypt.decryptMessage()
- wxBizMsgCrypt.encryptMessage()
- ```
  * @param {string} token 令牌
  * @param {string} encodingAesKey 已加密的AES秘钥
  * @param {string} receiveId 企业应用的回调，表示corpid，第三方事件的回调，表示suiteid
+ * @returns {verifyUrl,decryptMessage,encryptMessage}
  */
 function WXBizMsgCrypt(token, encodingAesKey, receiveId) {
     let aesKey = base64.toByteArray(encodingAesKey + "=");

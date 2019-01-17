@@ -1,4 +1,3 @@
-const jsSHA = require("jssha");
 const WXBizMsgCrypt = require("../WXBizMsgCrypt");
 jest.mock("../RandomGenerator");
 
@@ -27,7 +26,7 @@ describe("WXBizMsgCrypt TestSuite", () => {
         });
     });
     describe("decryptMessage TestCase", () => {
-        it("Test decryptMessage", async () => {
+        it("Test decryptMessage", () => {
             let corpId = "wx5823bf96d3bd56c7",
                 token = "QDG6eK",
                 encodingAesKey = "jWmYm7qr5nMoAUwZRjGtBxmz3KA1tkAj3ykkR6q2B2C",
@@ -39,7 +38,7 @@ describe("WXBizMsgCrypt TestSuite", () => {
                 timestamps = "1409659813",
                 nonce = "1372623149";
             let wxBizMsgCrypt = WXBizMsgCrypt(token, encodingAesKey, corpId);
-            let message = await wxBizMsgCrypt.decryptMessage(
+            let message = wxBizMsgCrypt.decryptMessage(
                 signature,
                 timestamps,
                 nonce,
@@ -53,12 +52,10 @@ describe("WXBizMsgCrypt TestSuite", () => {
             let corpId = "ww1436e0e65a779aee";
             let token = "hJqcu3uJ9Tn2gXPmxx2w9kkCkCE2EPYo";
             let encodingAesKey = "6qkdMrq68nTKduznJYO1A37W2oEgpkMUvkttRToqhUt";
-            let signature = "0c3914025cb4b4d68103f6bfc8db550f79dcf48e";
             let timestamp = "1476422779";
             let nonce = "1597212914";
             let replyMsg =
                 "<xml><ToUserName>ww1436e0e65a779aee</ToUserName><FromUserName>ChenJiaShun</FromUserName><CreateTime>1476422779</CreateTime><MsgType>text</MsgType><Content>你好</Content><MsgId>1456453720</MsgId><AgentID>1000002</AgentID></xml>";
-            debugger;
             let wxBizMsgCrypt = WXBizMsgCrypt(token, encodingAesKey, corpId);
             let message = wxBizMsgCrypt.encryptMessage(
                 replyMsg,
