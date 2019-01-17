@@ -1,13 +1,13 @@
 {
     "name": "node_weworkapi",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "The Nodejs WeWork API",
     "main": "index.js",
     "scripts": {
         "lint": "eslint **/*.js",
         "pretest": "npm run lint",
         "test": "jest",
-        "coverage": "jest"
+        "coverage": "jest --coverage"
     },
     "author": "EvanZhang <redwolf0302@gmail.com>",
     "license": "MIT",
