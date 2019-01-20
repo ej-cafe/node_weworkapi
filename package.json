@@ -13,7 +13,7 @@
     "license": "MIT",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/redwolf0302/node_weworkapi.git"
+        "url": "git+https://github.com/ej-cafe/node_weworkapi.git"
     },
     "keywords": [
         "WeWorkAPI",
@@ -21,9 +21,9 @@
         "WeWork"
     ],
     "bugs": {
-        "url": "https://github.com/redwolf0302/node_weworkapi/issues"
+        "url": "https://github.com/ej-cafe/node_weworkapi/issues"
     },
-    "homepage": "https://github.com/redwolf0302/node_weworkapi#readme",
+    "homepage": "https://github.com/ej-cafe/node_weworkapi#readme",
     "dependencies": {
         "aes-js": "^3.1.2",
         "base64-js": "^1.3.0",
